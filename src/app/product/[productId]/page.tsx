@@ -1,7 +1,7 @@
 import Container from "@/app/components/Container";
-import { event } from "@/utils/event";
 import ProductDetails from "./ProductDetails";
 import ListRating from "./ListRating";
+import { events } from "@/utils/events";
 
 interface IParams {
   productId?: string;
@@ -9,7 +9,8 @@ interface IParams {
 
 const Product = ({ params }: { params: IParams }) => {
   console.log("params", params);
-  event;
+
+  const event = events.find((item) => item.id === params.productId);
   return (
     <div className="p-8">
       <Container>
