@@ -16,6 +16,9 @@ export type CartProductType = {
   id: string;
   name: string;
   description: string;
+  date: string;
+  time: string;
+  location: string;
   category: string;
   brand: string;
   quantity: number;
@@ -34,6 +37,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
     id: event.id,
     name: event.name,
     description: event.description,
+    date: event.date,
+    time: event.time,
+    location: event.location,
     category: event.category,
     brand: event.brand,
     quantity: 1,
@@ -100,6 +106,15 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
         </div>
         <div>
           <span className="font-semibold ">BRAND:</span> {event.brand}
+        </div>
+        <div>
+          <span className="font-semibold ">Date:</span> {event.date}
+        </div>
+        <div>
+          <span className="font-semibold ">Time:</span> {event.time}
+        </div>
+        <div>
+          <span className="font-semibold ">Location:</span> {event.location}
         </div>
         <div
           className={
