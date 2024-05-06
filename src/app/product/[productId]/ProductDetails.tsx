@@ -2,6 +2,7 @@
 import Button from "../../components/Button";
 import SetQuantity from "@/app/components/events/SetQuantity";
 import { useCart } from "@/app/hooks/useCart";
+import { formatPrice } from "@/utils/formatPrice";
 import { Rating } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -92,29 +93,15 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
       <div>{event.image}</div>
       <div className="flex flex-col gap-1 text-slate-500 text-sm">
-        <h2 className="text-3xl font-medium text-slate-700">{event.name}</h2>
+        <h3 className="text-3xl font-medium text-slate-700">{event.name}</h3>
         <div className="flex items-center gap-2">
           <Rating value={eventRating} readOnly />
           <div>{event.reviews.length} reviews</div>
         </div>
-        <Horizontal />
-        <div className="text-justify">{event.description}</div>
-        <Horizontal />
-
-        <div>
-          <span className="font-semibold ">CATEGORY:</span> {event.category}
-        </div>
-        <div>
-          <span className="font-semibold ">BRAND:</span> {event.brand}
-        </div>
-        <div>
-          <span className="font-semibold ">Date:</span> {event.date}
-        </div>
-        <div>
-          <span className="font-semibold ">Time:</span> {event.time}
-        </div>
-        <div>
-          <span className="font-semibold ">Location:</span> {event.location}
+        <div className="flex items-center mt-5 my-2">
+          <h2 className="text-3xl text-black font-bold">
+            {formatPrice(event.price)}
+          </h2>
         </div>
         <div
           className={
@@ -125,6 +112,30 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
         >
           {event.inStock ? "In stock" : "Out of stock"}
         </div>
+
+        <Horizontal />
+        <div className="text-justify">
+          <span className="font-semibold ">DESCRIPTION:</span>
+          <div className="mt-2">{event.description}</div>
+        </div>
+        <Horizontal />
+
+        <div>
+          <span className="font-semibold ">CATEGORY: </span> {event.category}
+        </div>
+        <div>
+          <span className="font-semibold ">BRAND: </span> {event.brand}
+        </div>
+        <div>
+          <span className="font-semibold ">DATE: </span> {event.date}
+        </div>
+        <div>
+          <span className="font-semibold ">TIME: </span> {event.time}
+        </div>
+        <div>
+          <span className="font-semibold ">LOCATION: </span> {event.location}
+        </div>
+
         <Horizontal />
         {isProductInCart ? (
           <>
