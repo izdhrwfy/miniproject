@@ -12,6 +12,14 @@ export const events = [
     inStock: true,
     images: [
       {
+        seatcategory: "festival",
+        colorCode: "#0311ff",
+        image:
+          "https://i.pinimg.com/originals/b2/c9/a4/b2c9a48353e5d2fdc504e2ee24c7b245.jpg",
+      },
+      {
+        seatcategory: "seating",
+        colorCode: "#fc8cff",
         image:
           "https://i.pinimg.com/originals/b2/c9/a4/b2c9a48353e5d2fdc504e2ee24c7b245.jpg",
       },
@@ -31,6 +39,14 @@ export const events = [
     inStock: true,
     images: [
       {
+        seatcategory: "festival",
+        colorCode: "#0311ff",
+        image:
+          "https://i.pinimg.com/originals/77/00/2c/77002c8170d6117c74cf89fbee6621ab.jpg",
+      },
+      {
+        seatcategory: "seating",
+        colorCode: "#fc8cff",
         image:
           "https://i.pinimg.com/originals/77/00/2c/77002c8170d6117c74cf89fbee6621ab.jpg",
       },
@@ -50,6 +66,14 @@ export const events = [
     inStock: true,
     images: [
       {
+        seatcategory: "festival",
+        colorCode: "#0311ff",
+        image:
+          "https://i.pinimg.com/564x/32/c1/34/32c134170663fda58ec40177a59dbf05.jpg",
+      },
+      {
+        seatcategory: "seating",
+        colorCode: "#fc8cff",
         image:
           "https://i.pinimg.com/564x/32/c1/34/32c134170663fda58ec40177a59dbf05.jpg",
       },
@@ -69,6 +93,8 @@ export const events = [
     inStock: true,
     images: [
       {
+        seatcategory: "festival",
+        colorCode: "#0311ff",
         image:
           "https://i.pinimg.com/originals/e9/e0/7b/e9e07ba8e0f32af98c884cd8d3e8686b.jpg",
       },
@@ -88,6 +114,14 @@ export const events = [
     inStock: true,
     images: [
       {
+        seatcategory: "festival",
+        colorCode: "#0311ff",
+        image:
+          "https://i.pinimg.com/originals/53/e4/ba/53e4baaaae7274993e7bc361960ef965.jpg",
+      },
+      {
+        seatcategory: "seating",
+        colorCode: "#fc8cff",
         image:
           "https://i.pinimg.com/originals/53/e4/ba/53e4baaaae7274993e7bc361960ef965.jpg",
       },
@@ -102,11 +136,11 @@ export const events = [
         createdDate: "2023-07-06T06:08:33.067Z",
         user: {
           id: "6475af156bad4917456e6e1e",
-          name: "Charles",
+          name: "Ray",
           email: "example@gmail.com",
           emailVerified: null,
           image:
-            "https://lh3.googleusercontent.com/a/AAcHTteOiCtILLBWiAoolIW9PJH-r5825pBDl824_8LD=s96-c",
+            "https://i.pinimg.com/originals/53/e4/ba/53e4baaaae7274993e7bc361960ef965.jpg",
           hashedPassword: null,
           createdAt: "2023-05-30T08:08:53.979Z",
           updatedAt: "2023-05-30T08:08:53.979Z",

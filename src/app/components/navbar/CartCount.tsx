@@ -1,5 +1,5 @@
 "use client";
-import { useCart } from "@/app/hooks/useCart";
+import { useCart } from "../../../hooks/useCart";
 import { useRouter } from "next/navigation";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 

@@ -4,8 +4,14 @@ import Link from "next/link";
 import Maskot from "../../../../public/assets/maskot.png";
 import Image from "next/image";
 import CartCount from "./CartCount";
+import UserMenu from "./UserMenu";
+import getCurrentUser from "../../../action/getCurrentUser";
+import Categories from "./Categories";
+import SearchBar from "./SearchBar";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const currentUser = await getCurrentUser();
+
   return (
     <div className="sticky top-0 w-full bg-white z-30 shadow-sm ">
       <div className="py-4 border-b-[1px]">
@@ -17,14 +23,17 @@ const Navbar = () => {
             </Link>
 
             {/* SEARCH BAR */}
-            <div className="hidden md:block">SEARCH BAR</div>
+            <div className="hidden md:block">
+              <SearchBar />
+            </div>
             <div className="flex items-center gap-8 md:gap-12">
               <CartCount />
-              <div>USERMENU</div>
+              <UserMenu currentUser={currentUser} />
             </div>
           </div>
         </Container>
       </div>
+      <Categories />
     </div>
   );
 };

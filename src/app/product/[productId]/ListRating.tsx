@@ -4,12 +4,15 @@ import Avatar from "@/app/components/Avatar";
 import Heading from "../../components/Heading";
 import { Rating } from "@mui/material";
 import moment from "moment";
+import Product from "./page";
 
 interface ListRatingProps {
   event: any;
 }
 
 const ListRating: React.FC<ListRatingProps> = ({ event }) => {
+  if (event.reviews.length === 0) return null;
+
   return (
     <div>
       <Heading title="Event Review" />

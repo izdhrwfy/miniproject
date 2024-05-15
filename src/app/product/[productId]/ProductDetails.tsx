@@ -1,7 +1,9 @@
 "use client";
+import EventImage from "@/app/components/events/EventImage";
 import Button from "../../components/Button";
 import SetQuantity from "@/app/components/events/SetQuantity";
-import { useCart } from "@/app/hooks/useCart";
+import SetSeat from "@/app/components/events/SetSeat";
+import { useCart } from "../../../hooks/useCart";
 import { formatPrice } from "@/utils/formatPrice";
 import { Rating } from "@mui/material";
 import Image from "next/image";
@@ -24,7 +26,13 @@ export type CartProductType = {
   brand: string;
   quantity: number;
   price: number;
-  images: any;
+  selectedImg: SelectedImgType;
+};
+
+export type SelectedImgType = {
+  seatcategory: string;
+  colorCode: string;
+  image: string;
 };
 
 const Horizontal = () => {
@@ -45,11 +53,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
     brand: event.brand,
     quantity: 1,
     price: event.price,
-    images: event.image,
+    selectedImg: { ...event.images[0] },
   });
 
   const router = useRouter();
-  console.log(cartProducts);
 
   useEffect(() => {
     setIsProductInCart(false);
@@ -68,6 +75,15 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
   const eventRating =
     event.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) /
     event.reviews.length;
+
+  const handleSeatSelect = useCallback(
+    (value: SelectedImgType) => {
+      setCartProduct((prev) => {
+        return { ...prev, selectedImg: value };
+      });
+    },
+    [cartProduct.selectedImg]
+  );
 
   const handleQtyIncrease = useCallback(() => {
     if (cartProduct.quantity === 99) {
@@ -91,7 +107,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
-      <div>{event.image}</div>
+      <EventImage
+        cartProduct={cartProduct}
+        product={event}
+        handleSeatSelect={handleSeatSelect}
+      />
       <div className="flex flex-col gap-1 text-slate-500 text-sm">
         <h3 className="text-3xl font-medium text-slate-700">{event.name}</h3>
         <div className="flex items-center gap-2">
@@ -135,7 +155,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ event }) => {
         <div>
           <span className="font-semibold ">LOCATION: </span> {event.location}
         </div>
-
+        <Horizontal />
+        <SetSeat
+          cartProduct={cartProduct}
+          images={event.images}
+          handleSeatSelect={handleSeatSelect}
+        />
         <Horizontal />
         {isProductInCart ? (
           <>

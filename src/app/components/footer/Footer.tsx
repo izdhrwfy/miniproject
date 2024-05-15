@@ -28,10 +28,9 @@ const Footer = () => {
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-base font-bold mb=2">About Us</h3>
             <h2 className="mb-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-              voluptas inventore. Id sint nobis velit vero labore, hic
-              architecto! Dolorum ab harum consequatur facilis aspernatur amet
-              nisi mollitia! Quidem, reprehenderit.
+              EventPark, The no. 1 ticket platform in Indonesia offering you a
+              wide range of concerts, fan-meetings, musicals, classics, sports
+              and more
             </h2>
             <h2>
               &copy; {new Date().getFullYear()} EventPark. All rights reserved
