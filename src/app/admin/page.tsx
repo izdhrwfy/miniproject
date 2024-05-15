@@ -1,13 +1,13 @@
-// import getOrders from "../../../action/getOrders";
-// import getProducts from "../../../action/getProducts";
-// import getUsers from "../../../action/getUser";
+// import getProducts from "@/action/getProducts";
 // import Container from "../components/Container";
 // import Summary from "./Summary";
+// import getOrders from "@/action/getOrders";
+// import getUsers from "@/action/getUser";
 
 const Admin = async () => {
-  //   const products = await getProducts({ category: null });
-  //   const orders = await getOrders();
-  //   const users = await getUsers();
+  // const products = await getProducts({ category: null });
+  // const orders = await getOrders();
+  // const users = await getUsers();
 
   return (
     <div className="pt-8">

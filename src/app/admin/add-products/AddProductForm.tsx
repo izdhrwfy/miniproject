@@ -229,6 +229,7 @@ const AddProductForm = () => {
         disabled={isLoading}
         register={register}
         errors={errors}
+        type="date"
         required
       />
       <Input
@@ -237,6 +238,7 @@ const AddProductForm = () => {
         disabled={isLoading}
         register={register}
         errors={errors}
+        type="time"
         required
       />
       <Input

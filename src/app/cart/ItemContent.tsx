@@ -32,8 +32,11 @@ const ItemContent: React.FC<ItemContentProps> = ({ item }) => {
           </div>
         </Link>
         <div className="flex flex-col justify-between">
-          <Link href={`/product/${item.id}`}> {truncateText(item.name)}</Link>
-          <div>{item.selectedImg?.seatcategory}</div>
+          <Link className="font-bold" href={`/product/${item.id}`}>
+            {" "}
+            {truncateText(item.name)}
+          </Link>
+          <div>Seat Category : {item.selectedImg?.seatcategory}</div>
           <div className="w-[70px]">
             <button
               className="text-slate-500 underline"
